@@ -9,7 +9,6 @@ workflows:
           # run a custom app build step
           build: 'npm install'
       - cypress/run:
-          npx cypress run
           # make sure app has been installed and built
           # before running tests across multiple machines
           # this avoids installing same dependencies 10 times
