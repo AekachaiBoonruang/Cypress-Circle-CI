@@ -10,4 +10,4 @@ workflows:
           - cypress/run:
                 requires:
                     - cypress/install
-                record: true # record results on Cypress Dashboard
+                command: npx cypress run --record --key 6b94223a-bbbe-4eb8-9d45-5a6ec73f152b
