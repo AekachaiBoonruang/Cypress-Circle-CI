@@ -11,7 +11,6 @@ workflows:
                 requires:
                     - cypress/install
                 command: npx cypress run --record --key 6b94223a-bbbe-4eb8-9d45-5a6ec73f152b
-          - store_artifacts:
-                path: cypress/videos
-          - store_artifacts:
-                path: cypress/screenshots
+                post-steps:
+                    - store_test_results:
+                        path: cypress/videos/examples
