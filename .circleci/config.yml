@@ -11,7 +11,7 @@ workflows:
                 name: Test 1
                 requires:
                     - cypress/install
-                command: npx cypress run --spec "cypress/integration/aliasing.spec.js"
+                command: npx cypress run --spec "cypress/integration/examples/aliasing.spec.js"
                 post-steps:
                     - store_artifacts:
                         path: cypress/videos
@@ -22,7 +22,7 @@ workflows:
                 name: Test 2
                 requires:
                     - cypress/install
-                command: npx cypress run --spec "cypress/integration/assertions.spec.js"
+                command: npx cypress run --spec "cypress/integration/examples/assertions.spec.js"
                 post-steps:
                     - store_artifacts:
                         path: cypress/videos
