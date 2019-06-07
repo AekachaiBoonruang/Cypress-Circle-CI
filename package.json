@@ -9,9 +9,9 @@
     "cy:run": "cypress run",
     "cy:run:record": "cypress run --record",
     "cy:open": "cypress open",
-    "cleanup": "rm -fr mochawesome-report",
-    "merge_reports": "mochawesome-merge --reportDir mochawesome-report > mochawesome-report/output.json",
-    "generate_mochawesome_report": "marge mochawesome-report/output.json",
+    "cleanup": "rm -fr cypress/results",
+    "merge_reports": "mochawesome-merge --reportDir cypress/results > output.json",
+    "generate_mochawesome_report": "marge output.json",
     "e2e_mochawesome": "npm run cleanup; cypress run; npm run merge_reports; npm run generate_mochawesome_report"
   },
   "author": "",
