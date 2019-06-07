@@ -11,18 +11,7 @@ workflows:
                 name: Test 1
                 requires:
                     - cypress/install
-                command: npx cypress run --spec "cypress/integration/examples/aliasing.spec.js"
-                post-steps:
-                    - store_artifacts:
-                        path: cypress/videos
-                    - store_artifacts:
-                        path: cypress/screenshots
-
-          - cypress/run:
-                name: Test 2
-                requires:
-                    - cypress/install
-                command: npx cypress run --spec "cypress/integration/examples/assertions.spec.js"
+                command: npm run e2e_mochawesome
                 post-steps:
                     - store_artifacts:
                         path: cypress/videos
