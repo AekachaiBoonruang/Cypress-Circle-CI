@@ -6,12 +6,12 @@
   "scripts": {
     "test": "npm start & cypress run",
     "e2e": "cypress run",
-    "cy:run": "cypress run",
+    "cy:run": "node scripts/cypress.js",
     "cy:run:record": "cypress run --record",
     "cy:open": "cypress open",
     "cleanup": "rm -fr cypress/results",
-    "merge_reports": "mochawesome-merge --reportDir cypress/results > output.json",
-    "generate_mochawesome_report": "marge output.json",
+    "merge_reports": "mochawesome-merge --reportDir mochawesome-report > mochawesome.json",
+    "generate_mochawesome_report": "marge mochawesome-report/mochawesome.json",
     "e2e_mochawesome": "npm run cleanup; cypress run; npm run merge_reports; npm run generate_mochawesome_report"
   },
   "author": "",
@@ -22,9 +22,9 @@
     "cypress-skip-and-only-ui": "^1.1.0"
   },
   "dependencies": {
-    "mocha": "5.2.0",
+    "mocha": "^5.2.0",
     "mochawesome": "^4.0.0",
-    "mochawesome-report-generator": "^4.0.0",
-    "mochawesome-merge": "^2.0.0"
+    "mochawesome-merge": "^2.0.0",
+    "mochawesome-report-generator": "^4.0.0"
   }
 }

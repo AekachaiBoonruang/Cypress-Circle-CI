@@ -1,10 +1,6 @@
 {
-  "projectId": "jfi12v",
   "reporter": "mochawesome",
   "reporterOptions": {
-    "reportDir": "cypress/results",
-    "screenshotsFolder": "screenshots",
-    "videosFolder": "videos",
     "overwrite": false,
     "html": false,
     "json": true
