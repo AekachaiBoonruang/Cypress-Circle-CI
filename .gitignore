@@ -3,4 +3,5 @@ cypress/vdieos/*
 cypress/results/*
 mochawesome-report/*
 /.bunle
-/vendor
+node_modules/
+vendor/bundle
