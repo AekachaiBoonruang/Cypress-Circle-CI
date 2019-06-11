@@ -1,6 +1,6 @@
 defaults: &defaults
   docker:
-    - image: cypress/base:10
+    - image: 20scoops/ruby-cypress
       environment:
         TERM: xterm
   working_directory: ~/app
@@ -34,16 +34,14 @@ jobs:
           paths:
             - .cache/Cypress
       # - run:
+      #     name: Verify cypress
+      #     command: yarn cypress:verify
+      # - run:
       #     name: Check ESLint
       #     command: yarn lint
-      - run:
-          name: Ruby Install
-          command: | 
-            apt-get update
-            apt-get install ruby-full -y
-      - run:
-          name: Gem Install
-          command: gem install bundle
+      # - run:
+      #     name: Check Prettier Code
+      #     command: yarn prettier:check
       - restore_cache:
           name: Restore Cache Gems
           keys:
