@@ -24,8 +24,29 @@ jobs:
       #     name: Check ESLint
       #     command: yarn lint
       - run:
-          name: Danger
-          command: yarn danger ci
+          name: Ruby Install
+          command: | 
+            apt-get update
+            apt-get install ruby-full -y
+      - run:
+          name: Gem Install
+          command: gem install bundle
+      - restore_cache:
+          name: Restore Cache Gems
+          keys:
+            - v3-gems-{{ checksum "Gemfile.lock" }}
+            - v3-gems-
+      - run:
+          name: Bundle Install
+          command: |
+            bundle install --path vendor/bundle
+      - save_cache:
+          name: Save Cache Gems
+          key: v3-gems-{{ checksum "Gemfile.lock" }}
+          paths: vendor/bundle
+      - run:
+          name: Run Danger
+          command: bundle exec danger
       - save_cache:
           key: v2-deps-{{ .Branch }}-{{ checksum "package.json" }}
           paths:
