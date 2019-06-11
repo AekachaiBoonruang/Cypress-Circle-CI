@@ -2,3 +2,5 @@ node_modules/*
 cypress/vdieos/*
 cypress/results/*
 mochawesome-report/*
+.bunle/*
+vendor/*
