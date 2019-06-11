@@ -8,17 +8,8 @@ workflows:
         jobs:
           - cypress/install
           - cypress/run:
+                yarn: true
                 name: Test 1
-                requires:
-                    - cypress/install
-                command: npm run e2e_mochawesome
-                post-steps:
-                    - store_artifacts:
-                        path: cypress/videos
-                    - store_artifacts:
-                        path: mochawesome-report
-          - cypress/run:
-                name: Test 2
                 requires:
                     - cypress/install
                 command: npm run e2e_mochawesome
