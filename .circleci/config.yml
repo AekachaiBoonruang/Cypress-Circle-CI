@@ -1,20 +1,61 @@
-version: 2.1
+defaults: &defaults
+  docker:
+    - image: cypress/base:10
+      environment:
+        TERM: xterm
+  working_directory: ~/app
+  parallelism: 1
 
-orbs:
-    cypress: cypress-io/cypress@1
-
-workflows:
-    "Cypress Workflow":
-        jobs:
-          - cypress/install
-          - cypress/run:
-                yarn: true
-                name: Test 1
-                requires:
-                    - cypress/install
-                command: npm run e2e_mochawesome
-                post-steps:
-                    - store_artifacts:
-                        path: cypress/videos
-                    - store_artifacts:
-                        path: mochawesome-report
+version: 2
+jobs:
+  install_and_checking:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v2-deps-{{ .Branch }}-{{ checksum "package.json" }}
+            - v2-deps-{{ .Branch }}-
+            - v2-deps-
+      - run:
+          name: Install dependencies
+          command: yarn
+      - run:
+          name: Check ESLint
+          command: yarn lint
+      - save_cache:
+          key: v2-deps-{{ .Branch }}-{{ checksum "package.json" }}
+          paths:
+            - ~/.npm
+            - ~/.cache
+      - persist_to_workspace:
+          root: .
+          paths:
+            - node_modules
+      - persist_to_workspace:
+          root: ~/
+          paths:
+            - .cache/Cypress
+  E2E_Testing:
+    <<: *defaults
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - attach_workspace:
+          at: ~/
+      - run:
+          name: Example Testing
+          command:
+            yarn e2e_mochawesome
+      - store_artifacts:
+          path: cypress/videos
+      - store_artifacts:
+          path: cypress/screenshots
+      - store_artifacts:
+          path: mochawesome-report
+    jobs:
+      - install_and_checking
+      - E2E_Testing:
+          requires:
+            - install_and_checking
