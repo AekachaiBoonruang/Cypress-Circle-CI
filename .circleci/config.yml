@@ -20,9 +20,12 @@ jobs:
       - run:
           name: Install dependencies
           command: yarn
+      # - run:
+      #     name: Check ESLint
+      #     command: yarn lint
       - run:
-          name: Check ESLint
-          command: yarn lint
+          name: Danger
+          command: yarn danger ci
       - save_cache:
           key: v2-deps-{{ .Branch }}-{{ checksum "package.json" }}
           paths:
