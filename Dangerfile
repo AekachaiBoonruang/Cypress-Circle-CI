@@ -14,4 +14,5 @@ check_results = conflict_checker.check_conflict
 conflict_checker.check_conflict_and_comment
 
 eslint.config_file = "cypress/.eslintrc.json"
+eslint.ignore_file = "cypress/.eslintignore"
 eslint.lint
