@@ -33,15 +33,9 @@ jobs:
           root: ~/
           paths:
             - .cache/Cypress
-      # - run:
-      #     name: Verify cypress
-      #     command: yarn cypress:verify
-      # - run:
-      #     name: Check ESLint
-      #     command: yarn lint
-      # - run:
-      #     name: Check Prettier Code
-      #     command: yarn prettier:check
+      - run:
+          name: Check Prettier Code
+          command: yarn prettier:check
       - restore_cache:
           name: Restore Cache Gems
           keys:

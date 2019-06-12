@@ -13,7 +13,9 @@
     "merge_reports": "mochawesome-merge --reportDir mochawesome-report > mochawesome.json",
     "generate_mochawesome_report": "marge mochawesome-report/mochawesome.json",
     "e2e_mochawesome": "npm run cleanup; cypress run; npm run merge_reports; npm run generate_mochawesome_report",
-    "lint": "eslint cypress --color"
+    "lint": "eslint cypress --color",
+    "prettier": "prettier --write cypress/**/**/**/**/**/**/**/*.js",
+    "prettier:check": "prettier --list-different cypress/**/**/**/**/**/**/**/*.js"
   },
   "author": "",
   "license": "ISC",
@@ -24,7 +26,8 @@
     "danger": "^8.0.0",
     "eslint": "^5.16.0",
     "eslint-plugin-chai-friendly": "^0.4.1",
-    "eslint-plugin-cypress": "^2.2.1"
+    "eslint-plugin-cypress": "^2.2.1",
+    "prettier": "^1.17.1"
   },
   "dependencies": {
     "mocha": "^5.2.0",
