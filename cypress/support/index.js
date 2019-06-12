@@ -18,6 +18,5 @@ import './commands'
 require('cypress-skip-and-only-ui/support')
 require('cypress-plugin-retries')
 
-
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
