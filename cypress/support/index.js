@@ -17,6 +17,7 @@
 import './commands'
 require('cypress-skip-and-only-ui/support')
 require('cypress-plugin-retries')
+// require('cypress-dark/src/halloween')
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')

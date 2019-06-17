@@ -21,8 +21,10 @@
   "license": "ISC",
   "devDependencies": {
     "cypress": "^3.3.1",
+    "cypress-dark": "^1.7.13",
     "cypress-plugin-retries": "^1.2.2",
     "cypress-skip-and-only-ui": "^1.1.0",
+    "cypress-slack-reporter": "^0.4.0",
     "danger": "^8.0.0",
     "eslint": "^5.16.0",
     "eslint-plugin-chai-friendly": "^0.4.1",
@@ -31,6 +33,7 @@
   },
   "dependencies": {
     "mocha": "^5.2.0",
+    "mocha-multi-reporters": "^1.1.7",
     "mochawesome": "^4.0.0",
     "mochawesome-merge": "^2.0.0",
     "mochawesome-report-generator": "^4.0.0"
