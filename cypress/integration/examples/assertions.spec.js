@@ -10,7 +10,7 @@ context('Assertions', () => {
       // https://on.cypress.io/should
       cy.get('.assertion-table')
         .find('tbody tr:last')
-        .should('have.class', 'success')
+        .should('have.class', 'successe')
         .find('td')
         .first()
         // checking the text of the <td> element in various ways
@@ -126,7 +126,7 @@ context('Assertions', () => {
     it('assert - assert shape of an object', () => {
       const person = {
         name: 'Joe',
-        age: 20,
+        age: 23,
       }
       assert.isObject(person, 'value is object')
     })
