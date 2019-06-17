@@ -62,15 +62,14 @@ jobs:
           at: ~/
       - run:
           name: Example Testing
-          command:
-            yarn e2e_mochawesome
+          command: yarn e2e_mochawesome
       - store_artifacts:
           path: cypress/videos
       - store_artifacts:
           path: cypress/screenshots
       - store_artifacts:
           path: mochareports
-       - run:
+      - run:
           when: always
           name: Slack Custom Reporting via typeScript source File
           command: yarn run slack-ts
@@ -132,4 +131,3 @@ workflows:
       - E2E_Testing:
           requires:
             - install_and_checking
-
