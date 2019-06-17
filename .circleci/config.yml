@@ -61,15 +61,41 @@ jobs:
       - attach_workspace:
           at: ~/
       - run:
+          name: Create folder
+          command: mkdir mochareports
+      - run:
           name: Example Testing
-          command:
-            yarn e2e_mochawesome
+          command: yarn e2e_mochawesome
       - store_artifacts:
           path: cypress/videos
       - store_artifacts:
           path: cypress/screenshots
       - store_artifacts:
-          path: mochawesome-report
+          path: mochareports
+      # - run:
+      #     when: always
+      #     name: Slack Custom Reporting via typeScript source File
+      #     command: yarn run slack-ts
+      # - run:
+      #     when: always
+      #     name: Slack Custom Reporting via JavaScript Compiled File
+      #     command: yarn run slack-js
+      # - run:
+      #     when: always
+      #     name: Slack Custom Reporting via typeScript source File with opts
+      #     command: yarn run slack-ts-opts
+      # - run:
+      #     when: always
+      #     name: Slack Custom Reporting via JavaScript Compiled File with opts
+      #     command: yarn run slack-js-opts
+      - run:
+          name: Send message to slack
+          command: yarn cypress-slack-reporter
+      - run:
+          name: Send message to slack
+          command: yarn cypress-slack-reporter
+          when: on_fail
+
 workflows:
   version: 2
   'Cypress Workflow':
@@ -95,4 +121,3 @@ workflows:
       - E2E_Testing:
           requires:
             - install_and_checking
-

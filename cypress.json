@@ -1,8 +1,6 @@
 {
-  "reporter": "mochawesome",
+  "reporter": "mocha-multi-reporters",
   "reporterOptions": {
-    "overwrite": false,
-    "html": false,
-    "json": true
+    "configFile": "reporterOpts.json"
   }
 }
