@@ -49,7 +49,7 @@ context('Assertions', () => {
 
   describe('Explicit Assertions', () => {
     // https://on.cypress.io/assertions
-    it.only('expect - make an assertion about a specified subject', () => {
+    it('expect - make an assertion about a specified subject', () => {
       // We can use Chai's BDD style assertions
       expect(true).to.be.true
       const o = {foo: 'bar'}
@@ -126,7 +126,7 @@ context('Assertions', () => {
     it('assert - assert shape of an object', () => {
       const person = {
         name: 'Joe',
-        age: 20,
+        age: 23,
       }
       assert.isObject(person, 'value is object')
     })

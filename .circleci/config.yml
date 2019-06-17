@@ -89,12 +89,9 @@ jobs:
       #     name: Slack Custom Reporting via JavaScript Compiled File with opts
       #     command: yarn run slack-js-opts
       - run:
+          when: always
           name: Send message to slack
           command: yarn cypress-slack-reporter
-      - run:
-          name: Send message to slack
-          command: yarn cypress-slack-reporter
-          when: on_fail
 
 workflows:
   version: 2

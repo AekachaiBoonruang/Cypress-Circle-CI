@@ -4,3 +4,4 @@
 - YML file
 - eslint
 - danger
+- Noti to slack
