@@ -61,6 +61,9 @@ jobs:
       - attach_workspace:
           at: ~/
       - run:
+          name: Create folder
+          command: mkdir mochareports
+      - run:
           name: Example Testing
           command: yarn e2e_mochawesome
       - store_artifacts:

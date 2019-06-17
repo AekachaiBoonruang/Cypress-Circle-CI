@@ -4,3 +4,4 @@ cypress/results/*
 mochawesome-report/*
 .bundle/*
 vendor/*
+mochareports/*
