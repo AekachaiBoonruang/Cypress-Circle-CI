@@ -1,6 +1,7 @@
 node_modules/*
 cypress/vdieos/*
 cypress/results/*
+cypress/report/*
 mochawesome-report/*
 .bundle/*
 vendor/*
