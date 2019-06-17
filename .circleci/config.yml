@@ -69,22 +69,22 @@ jobs:
           path: cypress/screenshots
       - store_artifacts:
           path: mochareports
-      - run:
-          when: always
-          name: Slack Custom Reporting via typeScript source File
-          command: yarn run slack-ts
-      - run:
-          when: always
-          name: Slack Custom Reporting via JavaScript Compiled File
-          command: yarn run slack-js
-      - run:
-          when: always
-          name: Slack Custom Reporting via typeScript source File with opts
-          command: yarn run slack-ts-opts
-      - run:
-          when: always
-          name: Slack Custom Reporting via JavaScript Compiled File with opts
-          command: yarn run slack-js-opts
+      # - run:
+      #     when: always
+      #     name: Slack Custom Reporting via typeScript source File
+      #     command: yarn run slack-ts
+      # - run:
+      #     when: always
+      #     name: Slack Custom Reporting via JavaScript Compiled File
+      #     command: yarn run slack-js
+      # - run:
+      #     when: always
+      #     name: Slack Custom Reporting via typeScript source File with opts
+      #     command: yarn run slack-ts-opts
+      # - run:
+      #     when: always
+      #     name: Slack Custom Reporting via JavaScript Compiled File with opts
+      #     command: yarn run slack-js-opts
       - run:
           when: always
           name: Generate Test Passing Slack Alert
