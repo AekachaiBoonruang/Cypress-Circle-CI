@@ -86,25 +86,12 @@ jobs:
       #     name: Slack Custom Reporting via JavaScript Compiled File with opts
       #     command: yarn run slack-js-opts
       - run:
-          when: always
-          name: Generate Test Passing Slack Alert
-          command: yarn run slack-js-opts-test-passed
+          name: Send message to slack
+          command: yarn cypress-slack-reporter
       - run:
-          when: always
-          name: Generate Test Failing Slack Alert
-          command: yarn run slack-js-opts-test-failed
-      - run:
-          when: always
-          name: Generate Build Failure Slack Alert
-          command: yarn run slack-js-opts-build-failed
-      - run:
-          when: always
-          name: Run the CLI Cypress Runner
-          command: yarn run cli
-      - store_artifacts:
-          path: src/slack/test
-      - store_artifacts:
-          path: cypress/reports/mocha
+          name: Send message to slack
+          command: yarn cypress-slack-reporter
+          when: on_fail
 
 workflows:
   version: 2
