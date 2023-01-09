@@ -27,7 +27,7 @@
     "cypress-plugin-retries": "^1.2.2",
     "cypress-skip-and-only-ui": "^1.1.0",
     "cypress-slack-reporter": "^0.4.0",
-    "danger": "^8.0.0",
+    "danger": "^11.2.1",
     "eslint": "^5.16.0",
     "eslint-plugin-chai-friendly": "^0.4.1",
     "eslint-plugin-cypress": "^2.2.1",
