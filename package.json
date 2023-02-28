@@ -22,7 +22,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^3.3.1",
+    "cypress": "^12.7.0",
     "cypress-dark": "^1.7.13",
     "cypress-plugin-retries": "^1.2.2",
     "cypress-skip-and-only-ui": "^1.1.0",
@@ -34,7 +34,7 @@
     "prettier": "^1.17.1"
   },
   "dependencies": {
-    "mocha": "^5.2.0",
+    "mocha": "^10.2.0",
     "mocha-multi-reporters": "^1.1.7",
     "mochawesome": "^4.0.0",
     "mochawesome-merge": "^2.0.0",
